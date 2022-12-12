@@ -24,25 +24,27 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Company Name</th>
-      <th scope="col">Price</th>
+      <th scope="col">Current Price</th>
       <th scope="col">Previous Close</th>
-      <th scope="col">Market Cap</th>
-      <th scope="col">YTD Change</th>
-      <th scope="col">52 Wk High</th>
-      <th scope="col">52 Wk Low</th>
+      <th scope="col">Change</th>
+      <th scope="col">% Change</th>
+      <th scope="col">High price of day</th>
+      <th scope="col">Low price of day</th>
+      <th scope="col">Open price of day</th>
     </tr>
   </thead>
   <tbody>
     {% if ticker %}
         {% for item in output %}
         <tr>
-          <th scope="row">{{item.companyName}}</th>
-          <td>${{item.latestPrice}}</td>
-          <td>${{item.previousClose}}</td>
-          <td>${{item.marketCap}}</td>
-          <td>{{item.ytdChange}}%</td>
-          <td>${{item.week52High}}</td>
-          <td>${{item.week52Low}}</td>
+          <th scope="row">{{item.name}}</th>
+          <td>${{item.c}}</td>
+          <td>${{item.pc}}</td>
+          <td>${{item.d}}</td>
+          <td>{{item.dp}}%</td>
+          <td>${{item.h}}</td>
+          <td>${{item.l}}</td>
+          <td>${{item.o}}</td>
           </tr>
         {% endfor %}
     {% endif %}

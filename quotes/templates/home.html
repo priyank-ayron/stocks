@@ -7,13 +7,14 @@
 {% if api == "Error" %}
 There is some problem with your ticker symbol. Please try again.
 {% else %}
-<h2>{{api.companyName}}</h2><br />
-Price: ${{api.latestPrice}}<br />
-Previous Close: {{api.previousClose}}<br />
-Market Cap: {{api.marketCap}}<br />
-YTD change: {{api.ytdChange}}<br />
-52 Week High: {{api.week52High}}<br />
-52 Week Low: {{api.week52Low}}<br />
+<h2>{{api.name}}</h2><br />
+Current Price: ${{api.c}}<br />
+Previous Close: {{api.pc}}<br />
+Change: {{api.d}}<br />
+% change: {{api.dp}}<br />
+High price of day: {{api.h}}<br />
+Low price of day: {{api.l}}<br />
+Open price of day: {{api.o}}<br />
 {% endif %}
 {% endif %}
 {% endblock %}
